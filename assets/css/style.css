@@ -2,3 +2,19 @@
   color: red;
   font-size: 2em;
 }
+
+.img{
+ z-index: -0;
+ background-position: center;
+ background-size: cover;
+ background-repeat: none;
+}
+
+html{
+  z-index: 1,
+}
+
+.checked {
+  /* text-decoration: line-through; */
+  color: pink;
+}
