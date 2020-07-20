@@ -12,7 +12,6 @@ let _state = {
   img: new Img({large_url: '', copyright: 'loading'}),
   /**@type {Quote} */
   quote: new Quote({body: '', author: ''}),
-  count: 0
 };
 
 /** Collection of listeners to be called based on keyed state changes
@@ -23,6 +22,7 @@ let _listeners = {
   img: [],
   quote: [],
   todos: [],
+  count: []
 };
 
 /**

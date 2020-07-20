@@ -1,6 +1,10 @@
 import TodoService from "../services/todo-service.js";
 import store from "../store.js";
+import todoService from "../services/todo-service.js";
 
+function _drawCount(){
+document.getElementById('count').innerHTML = `<div><h5>To-Do: ${store.State.todos.length}</div>`
+}
 //TODO Create the render function
 function _drawTodos() {
   let template = ''
@@ -8,6 +12,7 @@ function _drawTodos() {
   let todos = store.State.todos
   todos.forEach(todo => template += todo.todoTemplate)
   document.getElementById('todos').innerHTML = template
+  _drawCount()
 }
 
 // function _drawCount(){

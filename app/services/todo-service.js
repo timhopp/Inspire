@@ -25,7 +25,6 @@ class TodoService {
     todoApi.post("", todo).then(res => {
       console.log('worked', res);
       this.getTodos()
-      store.State.count++
       console.log(store.State.count)
     });
    
@@ -66,7 +65,6 @@ class TodoService {
       console.log(res)
       store.commit('todos', store.State.todos.filter(to => to._id != todoId))
     })
-    store.State.count--
   }
 }
 
