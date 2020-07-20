@@ -1,5 +1,5 @@
 import store from "../store.js"
-let count = store.State.todos.length
+
 
 export default class toDo{
 
@@ -8,13 +8,19 @@ export default class toDo{
     this._id = data._id || data.id
     this.user = data.user 
     this.completed = data.completed 
-    this.count = data.count || count
   }
 
+  get countTemplate(){
+    let template = `
+    <div><h5>${store.State.count}</h5></div> `
+    return template
+  }
  get todoTemplate(){
    let template = `
-   <h5>${count}</h5>
    `
+  //  let template = `
+  //  <h5>${count}</h5>
+  //  `
   if(this.completed){
     template +=  `
     <div>
@@ -43,11 +49,6 @@ export default class toDo{
    return template
  }
 
- get countTemplate (){
-  let template = `
-  {this.count}`
-   return template
- }
 
 
 }

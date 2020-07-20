@@ -3,19 +3,25 @@ import store from "../store.js";
 
 //TODO Create the render function
 function _drawTodos() {
-  document.getElementById('count').innerHTML = store.State.toDo.countTemplate
   let template = ''
   console.log('draw todo ran')
   let todos = store.State.todos
   todos.forEach(todo => template += todo.todoTemplate)
   document.getElementById('todos').innerHTML = template
 }
-  
+
+// function _drawCount(){
+//   let template = ''
+//   console.log('draw todo ran')
+//   let todos = store.State.todos
+//   todos.forEach(todo => template += todo.countTemplate)
+//   document.getElementById('count').innerHTML = template
 
 export default class TodoController {
   constructor() {
     //TODO Remember to register your subscribers
     store.subscribe('todos', _drawTodos)
+    // store.subscribe('todos', _drawCount)
   }
 
   addTodo(event) {
@@ -26,6 +32,7 @@ export default class TodoController {
       description: form.todo.value,
     };
     TodoService.addTodoAsync(todo);
+    console.log(store.State.todos)
   }
 
   //NOTE This method will pass an Id to your service for the TODO that will need to be toggled
