@@ -37,6 +37,7 @@ export default class TodoController {
       description: form.todo.value,
     };
     TodoService.addTodoAsync(todo);
+    form.reset()
     console.log(store.State.todos)
   }
 
